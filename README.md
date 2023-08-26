@@ -678,6 +678,10 @@ const App = () => {
 };
 ```
 
+- **Redux Toolkit**:
+
+[Redux Toolkit Dökümanından ayrıntılı inceleyebilirsiniz.](https://redux-toolkit.js.org/tutorials/typescript)
+
 - **Yaygın Eventslar**:
 
 ```ts
