@@ -8,11 +8,15 @@
 
 - JavaScript, geliştiricilere büyük bir esneklik sağlar. Tamsayı olarak başlatılan bir değişkene, çalışma zamanında bir function değeri atanabilir. JavaScript’te değişken türleri tahmin edilemez. TypeScript, JavaScript dilinde yeni özellikler ve faydalı iyileştirmeler sunan bir JavaScript üst kümesidir. Kod tabanınızda TypeScript kullanarak, hataları erkenden kolayca tespit edebilir veya önleyebilir ve oldukça harika olan derleme zamanında hatalardan kurtulabilirsiniz. İlk bakışta TypeScript zor ve korkutucu görünebilir, ancak onunla biraz zaman geçirdikten sonra bence gerçekten seveceksiniz.
 
+<hr>
+
 ### Neden ortaya çıktı?
 
 - Yaygın olarak web uygulamalarında kullanılan JavaScript, Node.js ile birlikte sunucu taraflı uygulamalarda, Electron.js ile birlikte masaüstü uygulamalarda, çeşitli kütüphaneler sayesinde de hibrit mobil uygulama geliştirmede sıkça kullanılmaya başlandı ve tahmin edilmeyen bir büyüme gösterdi. Tasarlanma amacı olarak bu tarz platformlar ve büyük çaplı uygulamalar düşünülmediğinden JavaScript'in bazı yapısal eksiklikleri vardı. Nesne tabanlı dillerin sağladığı tip kontrolü, sınıflar gibi yapılar bulunmuyordu, dinamik olmasından dolayı derleme aşaması yoktu ve hata kontrolü zor yapılıyordu. TypeScript bu eksikleri gidermek ve JavaScript'i büyük projelerde daha etkili şekilde kullanmak için tasarlanmış bir programlama dili olarak ortaya çıktı.
 - TypeScript, "uygulama ölçeğinde geliştirme için JavaScript." olarak tanımlanmaktadır. TypeScript strongly-typed, nesne yönelimli ve derlenebilir açık kaynaklı bir programlama dilidir. Microsoft çalışanı ve C# dilinin tasarımcısı olan Anders Hejlsberg tarafından tasarlanmıştır.
   JavaScript'in tüm özelliklerini içinde barındıran ve ek özellikler eklenmiş bir üst kümesi olarak tanımlanabilir. Büyük ve kodlanma aşaması karmaşık olan projelerde verimliliği arttırır.
+
+<hr>
 
 ### Neden ihtiyaç duyuyoruz?
 
@@ -21,6 +25,8 @@
 - Büyük projelerde herkesin bu dikkati göstermemesi, projeye sonradan dahil olan, veya JS konularına hakim olmayan geliştiricilerin projede oluşturabilecekleri hataları minimize etmek için TypeScript gibi Type güvenliği sağlayan diller kullanılır.
 
 - Örneğin; basit bir toplama kodumuz olsun. Bu değerleri ekrandan, bir Rest API’sinden alıyor olabiliriz. Biz sum fonskiyonun da 2 sayıyı toplamak isteyen bir kod yazmak isterken JS Dynamic Type bir dil olmasından dolayı String + Number toplamamıza izin veriyor. Bu izin hatalara yol açabiliyor. Ve biz bunu run time aşamasında farkedebiliyoruz.
+
+<hr>
 
 ## Static Typing & Dynamic Typing
 
@@ -53,6 +59,8 @@ a = "Dynamic typing";
 
 ![jsvsts](https://www.freshersnow.com/wp-content/uploads/2023/02/Javascript-VS-Typescript.webp)
 
+<hr>
+
 #### Typescript avantajları;
 
 - Developerlar hatalarını erkenden tespit edebilir.
@@ -62,6 +70,8 @@ a = "Dynamic typing";
 - Js in kullanıldığı her yerde kullanılabilir.
 
 > **Note**: **Tarayıcılar Typescript kodunu anlayamazlar. Bu yüzden bir derleyici yardımı ile TS kodu Js koduna dönüştürülür.** (`tsc`=> typescript compiler)
+
+<hr>
 
 #### Ne zaman kullanılmalı?
 
@@ -91,6 +101,8 @@ var myName = "Name: ".concat(a);
 > Pure typescript de targetı es5 olarak ayarlayıp Spread operatörünü deneyebilirsiniz:).
 
 - **Unutmamamız gereken önemli bir husus da Typescript evet compile aşamasında hatayı fırlatır ama kodu js e dönüştürmeye devam eder. Fırlatılan hata typescriptden kaynaklıysa bu hata javascript için bir engel teşkil etmez ve kod bloğu çalışır fırlatılan hata kodda bir probleme yol açıyorsa(örneğin toplama işlemi yapan fonksiyona string argüman gönderme gibi) biz bunu run time aşamasında görebiliriz. Yada typescripti dinleyerek fırlatılan hatayı ortadan kaldırırız.**
+
+<hr>
 
 ## TS Types
 
@@ -465,6 +477,8 @@ const test2Generics: UpgradePostWithObject<{ id: number; username: string }> = {
 }; // Burada Obje çağırdık çüngü UpgradePotWithObject interface kısmıbnda T nin üzerine  bir de obje ekle dedik
 ```
 
+<hr>
+
 ## Type Assertions
 
 - 2 yöntemi vardır. Amacı typescriptin fırlattığı hataları engellemek ve type avantajlarından yararlanmak(intellisense gibi). Ama runtime aşamasında hataya yol açabilir. Emin olmadığımız sürece kullanmamalıyız.
@@ -476,6 +490,8 @@ const newAge = (<string>myAge).toLowerCase();
 const newAge2 = (myAge as string).toLowerCase();
 //tsyi susturyoruz ama runtime aşamasında hata döner.çünkü numberın toLowerCase metodu yoktur.
 ```
+
+<hr>
 
 ## Pure Typescript Projesi Oluşturma Komutları
 
@@ -489,7 +505,9 @@ const newAge2 = (myAge as string).toLowerCase();
 # watch moduna alıp her yaptığım işlemi anında compile eder.
 ```
 
-# React Typescript
+<hr>
+
+<h1 style="text-align:center">React Typescript</h1>
 
 ## Start Project CRA
 
@@ -503,6 +521,8 @@ yarn create react-app todo-ts --template typescript
 ```
 
 ![CRA ile Proje Oluşturma](./ts-cra.gif)
+
+<hr>
 
 ## Start Project Vite
 
@@ -518,6 +538,8 @@ pnpm create vite todoapp --template react-ts
 ```
 
 ![Vite ile Proje Oluşturma](./ts-vite.gif)
+
+<hr>
 
 ### React Types
 
@@ -677,6 +699,7 @@ const App = () => {
   return <p>current theme: {myTheme}</p>;
 };
 ```
+<hr>
 
 - **Redux Toolkit**:
 
@@ -698,9 +721,13 @@ onMouseEnter: (event: MouseEvent<HTMLButtonElement>) => void;
 onMouseLeave: (event: MouseEvent<HTMLButtonElement>) => void;
 ```
 
+<hr>
+
 ## Type ları globalde tanımlama
 
 - .d.ts uzantılı olarak tanımlama yaparsak bunu global olarak algılayıp herhangi bir export import yapmamıza gerek kalmıyor. Eğer diğer türlü yaparsak yani .d koymadan oluşturursak export import yapmamız gerekiyor
+
+<hr>
 
 # Typescript Cheat Sheet
 
